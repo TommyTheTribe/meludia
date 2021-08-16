@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meludia/ui/exercices/components/Circle.dart';
+import 'package:meludia/ui/exercices/components/Footer.dart';
 import 'package:meludia/ui/exercices/components/Hearts.dart';
 import 'package:meludia/ui/exercices/components/Orange_Ascendant.dart';
 import 'package:meludia/ui/exercices/components/Sun.dart';
@@ -53,14 +54,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Positioned(
                 child: Circle(),
-                right: 25,
+                right: 27.5,
                 top: 85,
               ),
             ],
           ),
-          //Footer(),
+          // Footer(),
         ],
       ),
+      bottomNavigationBar: Footer(),
       floatingActionButton: SizedBox(
         width: 100,
         child: ElevatedButton(

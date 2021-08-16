@@ -16,12 +16,10 @@ class _SunState extends State<Sun> with TickerProviderStateMixin {
   double _size = 20.0;
   bool _large = false;
 
-  Timer _timer;
-
   @override
   void initState() {
     super.initState();
-    _timer = new Timer.periodic(
+    new Timer.periodic(
         new Duration(milliseconds: 300),
         (Timer timer) => {
               setState(() {
@@ -40,10 +38,8 @@ class _SunState extends State<Sun> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: AnimatedSize(
-        vsync: this,
-        curve: Curves.easeIn,
-        duration: const Duration(milliseconds: 100),
+      width: 55.0,
+      child: Center(
         child: SizedBox(
           width: _size,
           child: ascendantButton,

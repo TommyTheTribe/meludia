@@ -10,8 +10,8 @@ class _HeartsState extends State<Hearts> with TickerProviderStateMixin {
   final Widget heart = SvgPicture.asset(
     'assets/images/heart.svg',
     semanticsLabel: 'Test',
-    width: 10,
-    height: 10,
+    width: 20,
+    height: 20,
   );
 
   @override

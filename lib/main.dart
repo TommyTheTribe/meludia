@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:meludia/ui/exercices/components/Circle.dart';
 import 'package:meludia/ui/exercices/components/Footer.dart';
+import 'package:meludia/ui/exercices/components/GreenCircle.dart';
 import 'package:meludia/ui/exercices/components/Hearts.dart';
 import 'package:meludia/ui/exercices/components/Orange_Ascendant.dart';
 import 'package:meludia/ui/exercices/components/Sun.dart';
+import 'package:meludia/ui/exercices/components/Test.dart';
+
+import 'main.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,24 +45,26 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Hearts(),
-          Stack(
-            children: [
-              Positioned(
-                child: OrangeAscendant(),
-              ),
-              Positioned(
-                right: 0,
-                bottom: 150,
-                child: Sun(),
-              ),
-              Positioned(
-                child: Circle(),
-                right: 27.5,
-                top: 85,
-              ),
-            ],
-          ),
+          Expanded(child: Test()),
+          // Expanded(child: GreenCircle()),
+          // Hearts(),
+          // Stack(
+          //   children: [
+          //     Positioned(
+          //       child: OrangeAscendant(),
+          //     ),
+          //     Positioned(
+          //       right: 0,
+          //       bottom: 150,
+          //       child: Sun(),
+          //     ),
+          //     Positioned(
+          //       child: Circle(),
+          //       right: 27.5,
+          //       top: 85,
+          //     ),
+          //   ],
+          // ),
           // Footer(),
         ],
       ),

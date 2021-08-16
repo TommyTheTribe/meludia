@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 158.1 158.1">
+  <defs>
+    <radialGradient id="a5f006c4-6534-4ed9-ad06-c654bd0e5b97" cx="76.04" cy="79.05" r="35.84" gradientUnits="userSpaceOnUse">
+      <stop offset="0.47" stop-color="#fff"/>
+      <stop offset="0.6" stop-color="#d2d0e3"/>
+      <stop offset="0.89" stop-color="#605c9b"/>
+      <stop offset="0.94" stop-color="#4e4990"/>
+    </radialGradient>
+  </defs>
+  <g id="ab889808-c6f6-4f72-8184-839d8fbfac8e" data-name="Layer 2">
+    <g id="b9982298-f5bf-457f-86e1-2cd7fe52049f" data-name="Asc/desc">
+      <g id="b0b22c28-55af-4488-99c4-37f4d016a020" data-name="Test Dany 4">
+        <g id="ac4cb43f-0232-4911-b979-6c25d7b3a33a" data-name="Br des - copie 2">
+          <g id="b2dcbd33-fca4-4ae7-a981-28bfc2cfda7f" data-name="Calque 29">
+            <circle cx="79.05" cy="79.05" r="78.51" style="fill: #fff"/>
+            <circle cx="79.05" cy="79.05" r="78.55" style="fill: none;stroke: #4e4990;stroke-linecap: round;stroke-miterlimit: 10;stroke-width: 1.01373817508286px;opacity: 0.4"/>
+            <g>
+              <g style="opacity: 0.30000000000000004">
+                <path d="M79.05,7.25a71.8,71.8,0,1,1-71.8,71.8,71.88,71.88,0,0,1,71.8-71.8m0-3.54A75.35,75.35,0,1,0,154.4,79.05,75.34,75.34,0,0,0,79.05,3.71Z" style="fill: #4e4990"/>
+              </g>
+              <g style="opacity: 0.380000001192093">
+                <path d="M78.45,14.45a64.61,64.61,0,1,1-64.61,64.6,64.68,64.68,0,0,1,64.61-64.6m0-3.86a68.46,68.46,0,1,0,68.46,68.46A68.46,68.46,0,0,0,78.45,10.59Z" style="fill: #4e4990"/>
+              </g>
+              <g style="opacity: 0.4600000003973644">
+                <path d="M77.85,21.64A57.42,57.42,0,1,1,20.43,79.05,57.47,57.47,0,0,1,77.85,21.64m0-4.16a61.57,61.57,0,1,0,61.57,61.57A61.57,61.57,0,0,0,77.85,17.48Z" style="fill: #4e4990"/>
+              </g>
+              <g style="opacity: 0.5399999996026358">
+                <path d="M77.24,28.83A50.22,50.22,0,1,1,27,79.05,50.28,50.28,0,0,1,77.24,28.83m0-4.46a54.68,54.68,0,1,0,54.69,54.68A54.68,54.68,0,0,0,77.24,24.37Z" style="fill: #4e4990"/>
+              </g>
+              <g style="opacity: 0.6199999988079071">
+                <path d="M76.64,36a43,43,0,1,1-43,43,43.08,43.08,0,0,1,43-43m0-4.76a47.8,47.8,0,1,0,47.8,47.79,47.79,47.79,0,0,0-47.8-47.79Z" style="fill: #4e4990"/>
+              </g>
+              <g style="opacity: 0.7000000000000001">
+                <path d="M76,43.21A35.84,35.84,0,1,1,40.2,79.05,35.88,35.88,0,0,1,76,43.21m0-5.06A40.91,40.91,0,1,0,117,79.05,40.91,40.91,0,0,0,76,38.15Z" style="fill: #4e4990"/>
+              </g>
+            </g>
+            <g style="opacity: 0.7000000000000001">
+              <circle cx="76.04" cy="79.05" r="35.84" style="fill: url(#a5f006c4-6534-4ed9-ad06-c654bd0e5b97)"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

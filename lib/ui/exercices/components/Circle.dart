@@ -47,7 +47,6 @@ class _CircleState extends State<Circle> with SingleTickerProviderStateMixin {
   }
 }
 
-// FOR PAINTING THE TRACKING POINT
 class PointPainter extends CustomPainter {
   final double radius;
   final double radians;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:meludia/ui/exercices/components/Circle.dart';
 import 'package:meludia/ui/exercices/components/Footer.dart';
-import 'package:meludia/ui/exercices/components/GreenCircle.dart';
+import 'package:meludia/ui/exercices/components/Green_Ascendant.dart';
 import 'package:meludia/ui/exercices/components/Hearts.dart';
 import 'package:meludia/ui/exercices/components/Orange_Ascendant.dart';
 import 'package:meludia/ui/exercices/components/Sun.dart';
-import 'package:meludia/ui/exercices/components/Test.dart';
+import 'package:meludia/ui/exercices/components/CircleAnimation.dart';
 
 import 'main.dart';
 
@@ -35,7 +35,27 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
+  AnimationController _controller;
+  Animation _animation;
+
+  @override
+  void initState() {
+    _controller = AnimationController(
+        vsync: this, duration: Duration(milliseconds: 1000));
+    super.initState();
+    _animation = Tween(begin: 0.0, end: 1.0).animate(_controller)
+      ..addListener(() {
+        setState(() {});
+      })
+      ..addStatusListener((AnimationStatus status) {
+        if (status == AnimationStatus.completed) {
+          _controller.reset();
+        }
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,27 +65,37 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Expanded(child: Test()),
-          // Expanded(child: GreenCircle()),
-          // Hearts(),
-          // Stack(
-          //   children: [
-          //     Positioned(
-          //       child: OrangeAscendant(),
-          //     ),
-          //     Positioned(
-          //       right: 0,
-          //       bottom: 150,
-          //       child: Sun(),
-          //     ),
-          //     Positioned(
-          //       child: Circle(),
-          //       right: 27.5,
-          //       top: 85,
-          //     ),
-          //   ],
-          // ),
-          // Footer(),
+          Hearts(),
+          Stack(
+            children: [
+              Positioned.fill(
+                child: CircleAnimation(
+                  animation: _animation,
+                  controller: _controller,
+                ),
+              ),
+              Positioned(
+                child: _animation.status == AnimationStatus.dismissed ||
+                        _animation.status == AnimationStatus.completed
+                    ? OrangeAscendant()
+                    : GreenAscendant(),
+              ),
+              Positioned(
+                right: 0,
+                bottom: 150,
+                child: GestureDetector(
+                    onTap: () {
+                      _controller.forward();
+                    },
+                    child: Sun()),
+              ),
+              Positioned(
+                child: Circle(),
+                right: 27.5,
+                top: 85,
+              ),
+            ],
+          ),
         ],
       ),
       bottomNavigationBar: Footer(),

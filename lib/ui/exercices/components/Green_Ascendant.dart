@@ -10,12 +10,18 @@ class _GreenAscendantState extends State<GreenAscendant>
     with TickerProviderStateMixin {
   final Widget ascendantBackground = SvgPicture.asset(
     'assets/images/ascendant_background_green.svg',
-    color: Colors.green,
     semanticsLabel: 'Test',
   );
 
   @override
   Widget build(BuildContext context) {
-    return ascendantBackground;
+    return SizedBox(
+      width: 300,
+      height: 300,
+      child: FittedBox(
+        child: ascendantBackground,
+        fit: BoxFit.fill,
+      ),
+    );
   }
 }

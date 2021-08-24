@@ -1,53 +1,53 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class Test extends StatefulWidget {
-  Test();
+class CircleAnimation extends StatefulWidget {
+  CircleAnimation({
+    @required this.animation,
+    @required this.controller,
+  })  : assert(animation != null),
+        assert(controller != null);
+
+  final Animation animation;
+  final AnimationController controller;
 
   @override
   State<StatefulWidget> createState() {
-    return TestState();
+    return CircleAnimationState();
   }
 }
 
-class TestState extends State<Test> with SingleTickerProviderStateMixin {
-  AnimationController _controller;
-  Animation _animation;
+class CircleAnimationState extends State<CircleAnimation>
+    with SingleTickerProviderStateMixin {
   Path _path;
 
   @override
   void initState() {
-    _controller = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 5000));
     super.initState();
-    _animation = Tween(begin: 0.0, end: 1.0).animate(_controller)
-      ..addListener(() {
-        setState(() {});
-      });
-    _controller.forward();
     _path = drawPath();
   }
 
   @override
   Widget build(BuildContext context) {
+    print(widget.animation.status);
     return Container(
       child: Stack(
         children: <Widget>[
           Positioned(
-            top: 0,
-            child: CustomPaint(
-              painter: PathPainter(_path),
-            ),
-          ),
-          Positioned(
-            top: calculate(_animation.value).dy,
-            left: calculate(_animation.value).dx,
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.circular(10)),
-              width: 10,
-              height: 10,
+            top: calculate(widget.animation.value).dy,
+            left: calculate(widget.animation.value).dx,
+            child: Opacity(
+              opacity: widget.animation.status == AnimationStatus.dismissed
+                  ? 0.0
+                  : 1.0,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(100),
+                ),
+                width: (1 - widget.animation.value) * 200,
+                height: (1 - widget.animation.value) * 200,
+              ),
             ),
           ),
         ],
@@ -57,16 +57,14 @@ class TestState extends State<Test> with SingleTickerProviderStateMixin {
 
   @override
   void dispose() {
-    _controller.dispose();
+    widget.controller.dispose();
     super.dispose();
   }
 
   Path drawPath() {
-    Size size = Size(300, 300);
     Path path = Path();
-    // path.moveTo(0, size.height / 2);
-    path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height / 2);
+    path.moveTo(-100, 150);
+    path.quadraticBezierTo(150, 150, 250, 95);
     return path;
   }
 
@@ -89,7 +87,7 @@ class PathPainter extends CustomPainter {
     Paint paint = Paint()
       ..color = Colors.redAccent.withOpacity(0.3)
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 3.0;
+      ..strokeWidth = 0.0;
 
     canvas.drawPath(this.path, paint);
   }
